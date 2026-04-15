@@ -1,17 +1,46 @@
 # BePart Manager API Automation
 
-**Complete, production-ready automated testing suite** for the BePart Manager Backend API with comprehensive test coverage, professional Allure reporting, and extensive documentation.
+> **Complete, production-ready automated testing suite** for the BePart Manager Backend API — featuring comprehensive test coverage, professional Allure reporting, and extensive documentation.
+
+[![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](.) [![Tests](https://img.shields.io/badge/tests-17%2F17%20passing-brightgreen)](.) [![Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen)](.) [![Java](https://img.shields.io/badge/java-11%2B-blue)](.) [![Maven](https://img.shields.io/badge/maven-3.6%2B-blue)](.)
+
+---
+
+## 📋 Table of Contents
+
+1. [Key Features](#-key-features)
+2. [Project Statistics](#-project-statistics)
+3. [Prerequisites](#-prerequisites)
+4. [Project Structure](#-project-structure)
+5. [Technology Stack](#-technology-stack)
+6. [API Endpoints Tested](#-api-endpoints-tested)
+7. [Configuration](#️-configuration)
+8. [Quick Start](#-quick-start)
+9. [Running Tests](#-running-tests)
+10. [Expected Output](#-expected-output)
+11. [Allure Reports](#-allure-reports)
+12. [Troubleshooting](#-troubleshooting)
+13. [Documentation](#-documentation)
+14. [Common Tasks](#-common-tasks)
+15. [Project Status](#-project-status)
+16. [Author](#-author)
+
+---
 
 ## ✨ Key Features
 
-- 🚀 **17 Comprehensive Tests** - 5 positive + 12 negative scenarios
-- 📊 **Professional Allure Reporting** - Beautiful HTML dashboards
-- 🔐 **Centralized Configuration** - Easy token and environment management
-- 📝 **110+ Automated Assertions** - Multi-layer validation
-- 🧪 **JUnit 5 Framework** - Modern testing approach
-- 📈 **100% Endpoint Coverage** - All 5 Manager API endpoints tested
-- 📚 **3,100+ Lines of Documentation** - Complete guides and references
-- 🎯 **Production Ready** - CI/CD integration ready
+| Feature | Details |
+|---------|---------|
+| 🚀 **17 Comprehensive Tests** | 5 positive + 12 negative scenarios |
+| 📊 **Professional Allure Reporting** | Beautiful HTML dashboards with trend analysis |
+| 🔐 **Centralized Configuration** | Single-file token and environment management |
+| 📝 **110+ Automated Assertions** | Multi-layer response validation |
+| 🧪 **JUnit 5 Framework** | Modern, annotation-driven testing |
+| 📈 **100% Endpoint Coverage** | All 5 Manager API endpoints tested |
+| 📚 **3,100+ Lines of Documentation** | Complete guides and references |
+| 🎯 **Production Ready** | CI/CD integration ready |
+
+---
 
 ## 📊 Project Statistics
 
@@ -19,71 +48,82 @@
 |--------|-------|
 | **Total Tests** | 17 (5 positive + 12 negative) |
 | **Assertions** | 110+ |
-| **Endpoints** | 5 of 5 (100% coverage) |
+| **Endpoints Covered** | 5 of 5 (100%) |
 | **Pass Rate** | 100% |
-| **Execution Time** | ~50 seconds |
+| **Avg. Execution Time** | ~50 seconds |
 | **Documentation** | 3,100+ lines |
 | **Code Quality** | Production ready |
 
-## 🎯 Prerequisites
+---
 
-- ✅ Java 11 or higher
-- ✅ Maven 3.6 or higher
-- ✅ Internet connection (for API access)
-- ✅ Valid Bearer token (configured in properties)
+## ✅ Prerequisites
+
+Before running the project, ensure the following are installed and available:
+
+- **Java** 11 or higher
+- **Maven** 3.6 or higher
+- **Internet connection** (required for API access)
+- **Valid Bearer token** (configured in `config.properties`)
+
+---
 
 ## 📁 Project Structure
 
 ```
-onboarding-api-automation/
-├── pom.xml                                      # Maven configuration
-├── README.md                                    # This file
-├── run-tests.bat                                # Execute tests
-├── run-tests-with-allure.bat                    # Execute with Allure
-├── serve-allure-report.bat                      # View Allure reports
+BePartManager-api-automation/
+├── pom.xml                                        # Maven build configuration
+├── README.md                                      # This file
+├── run-tests.bat                                  # Execute all tests
+├── run-tests-with-allure.bat                      # Execute tests + generate report
+├── serve-allure-report.bat                        # Serve Allure HTML report
 │
 ├── src/
 │   ├── main/
 │   │   ├── java/com/managerApp/utils/
-│   │   │   └── ConfigReader.java               # Configuration utility
+│   │   │   └── ConfigReader.java                 # Configuration utility
 │   │   └── resources/
-│   │       └── config.properties                # Environment configuration
+│   │       └── config.properties                  # Environment & test data
 │   │
 │   └── test/
 │       ├── java/com/managerApp/api/
-│       │   ├── BePartManagerApiTest.java        # 5 positive tests (606 lines)
-│       │   └── BePartManagerApiNegativeTest.java # 12 negative tests (447 lines)
+│       │   ├── BePartManagerApiTest.java          # 5 positive tests
+│       │   └── BePartManagerApiNegativeTest.java  # 12 negative tests
 │       └── resources/
-│           └── allure.properties                # Allure configuration
+│           └── allure.properties                  # Allure reporting config
 │
 ├── target/
-│   ├── allure-results/                          # Test execution data
-│   └── allure-report/                           # HTML reports
+│   ├── allure-results/                            # Raw test execution data
+│   └── allure-report/                             # Generated HTML report
 │
-└── Documentation/                               # Complete guides
-    ├── QUICK_REFERENCE.md                       # Quick commands
-    ├── CONFIGURATION_SUMMARY.md                 # Configuration guide
-    ├── ALLURE_GUIDE.md                          # Allure setup
-    ├── ASSERTIONS_GUIDE.md                      # Assertion patterns
-    ├── EXAMPLE_ASSERTIONS.md                    # Code examples
-    ├── ENDPOINTS_REFERENCE.md                   # API documentation
-    ├── TESTING_SUMMARY.md                       # Test details
-    ├── JIRA_DOCUMENTATION.md                    # Complete docs
-    ├── PROJECT_DELIVERY_SUMMARY.md              # Delivery summary
-    └── PROJECT_SUMMARY.md                       # Project overview
+└── Documentation/                                 # Supplementary guides
+    ├── QUICK_REFERENCE.md
+    ├── CONFIGURATION_SUMMARY.md
+    ├── ALLURE_GUIDE.md
+    ├── ASSERTIONS_GUIDE.md
+    ├── EXAMPLE_ASSERTIONS.md
+    ├── ENDPOINTS_REFERENCE.md
+    ├── TESTING_SUMMARY.md
+    ├── JIRA_DOCUMENTATION.md
+    ├── PROJECT_DELIVERY_SUMMARY.md
+    └── PROJECT_SUMMARY.md
 ```
 
+---
 
 ## 🔧 Technology Stack
 
 ### Core Technologies
-- **Java** 11+
-- **Maven** 3.6+
-- **JUnit 5** 5.10.0
-- **REST-Assured** 5.3.2
-- **Allure** 2.24.0
 
-### Key Dependencies
+| Technology | Version |
+|-----------|---------|
+| **Java** | 11+ |
+| **Maven** | 3.6+ |
+| **JUnit 5** | 5.10.0 |
+| **REST-Assured** | 5.3.2 |
+| **Allure** | 2.24.0 |
+
+### Key Maven Dependencies
+
 ```xml
 <dependencies>
     <!-- API Testing -->
@@ -92,21 +132,21 @@ onboarding-api-automation/
         <artifactId>rest-assured</artifactId>
         <version>5.3.2</version>
     </dependency>
-    
+
     <!-- Testing Framework -->
     <dependency>
         <groupId>org.junit.jupiter</groupId>
         <artifactId>junit-jupiter</artifactId>
         <version>5.10.0</version>
     </dependency>
-    
+
     <!-- Allure Reporting -->
     <dependency>
         <groupId>io.qameta.allure</groupId>
         <artifactId>allure-rest-assured</artifactId>
         <version>2.24.0</version>
     </dependency>
-    
+
     <!-- JSON Processing -->
     <dependency>
         <groupId>io.rest-assured</groupId>
@@ -116,80 +156,106 @@ onboarding-api-automation/
 </dependencies>
 ```
 
-## 🎯 API Endpoints Tested
+---
 
-All endpoints require Bearer token authentication through the Manager API:
+## 🌐 API Endpoints Tested
+
+All endpoints require **Bearer token authentication** via the Manager API.
 
 ### Positive Test Coverage (5 Endpoints)
 
 | # | Method | Endpoint | Test Method | Description |
 |---|--------|----------|-------------|-------------|
-| 1 | GET | `/api/v1/manager/buddies` | `testGetBuddies()` | Retrieve paginated list of buddies |
-| 2 | GET | `/api/v1/manager/performance/{userId}/{journeyId}` | `testGetPerformanceWithJourney()` | Get user journey performance metrics |
-| 3 | GET | `/api/v1/manager/buddies/{userId}` | `testGetBuddyByUserId()` | Get detailed buddy information |
-| 4 | GET | `/api/v1/manager/feedback/{userId}/{journeyId}` | `testGetFeedback()` | Retrieve journey feedback data |
-| 5 | GET | `/api/v1/manager/checklist/{userId}/{journeyId}` | `testGetChecklist()` | Get onboarding checklist items |
+| 1 | `GET` | `/api/v1/manager/buddies` | `testGetBuddies()` | Retrieve paginated list of buddies |
+| 2 | `GET` | `/api/v1/manager/performance/{userId}/{journeyId}` | `testGetPerformanceWithJourney()` | Get user journey performance metrics |
+| 3 | `GET` | `/api/v1/manager/buddies/{userId}` | `testGetBuddyByUserId()` | Get detailed buddy information |
+| 4 | `GET` | `/api/v1/manager/feedback/{userId}/{journeyId}` | `testGetFeedback()` | Retrieve journey feedback data |
+| 5 | `GET` | `/api/v1/manager/checklist/{userId}/{journeyId}` | `testGetChecklist()` | Get onboarding checklist items |
 
 ### Negative Test Coverage (12 Scenarios)
 
-**Authentication & Security (3 tests)**
+<details>
+<summary><strong>🔐 Authentication &amp; Security (3 tests)</strong></summary>
+
 - No authentication token validation
 - Invalid token handling
 - Malformed token format testing
 
-**Input Validation (4 tests)**
+</details>
+
+<details>
+<summary><strong>🛡️ Input Validation (4 tests)</strong></summary>
+
 - Invalid user ID format validation
 - Non-existent user handling
 - Invalid journey ID validation
 - Empty user ID path handling
 
-**HTTP Method Validation (2 tests)**
-- POST method on GET-only endpoints
-- DELETE method on GET-only endpoints
+</details>
 
-**Edge Cases & Performance (3 tests)**
+<details>
+<summary><strong>🔁 HTTP Method Validation (2 tests)</strong></summary>
+
+- `POST` method on GET-only endpoints
+- `DELETE` method on GET-only endpoints
+
+</details>
+
+<details>
+<summary><strong>⚡ Edge Cases &amp; Performance (3 tests)</strong></summary>
+
 - Special characters in user ID
-- Missing Content-Type header
+- Missing `Content-Type` header
 - Response time validation (< 30 seconds)
+
+</details>
+
+---
 
 ## ⚙️ Configuration
 
-### Centralized Configuration Management
-
-All configuration is managed through `config.properties`:
+All configuration is managed centrally through a single file: `src/main/resources/config.properties`
 
 ```properties
+# ──────────────────────────────────────────
 # API Configuration
+# ──────────────────────────────────────────
 base.url=https://api.onboardingv2.test.gcw.ng.telekom.net
 bearer.token=<your-bearer-token-here>
 
-# Test Data
+# ──────────────────────────────────────────
+# Positive Test Data
+# ──────────────────────────────────────────
 user.id=d3044832-a0f1-703b-221e-6997687e5375
 journey.storyblok.id=8cfc8128-e101-4b7c-81ff-5631b3276629
 
+# ──────────────────────────────────────────
 # Negative Test Data
+# ──────────────────────────────────────────
 invalid.user.id=invalid-uuid-123
 non.existent.user.id=99999999-9999-9999-9999-999999999999
 non.existent.journey.id=00000000-0000-0000-0000-000000000000
 invalid.bearer.token=invalid-token-12345
 ```
 
-### Updating Configuration
+### How to Update Configuration
 
-**To update the Bearer token:**
+**Update the Bearer token:**
 1. Open `src/main/resources/config.properties`
-2. Update the `bearer.token` value
-3. Save the file
-4. Run tests (no code recompilation needed!)
+2. Replace the `bearer.token` value with your new token
+3. Save the file — no recompilation needed
 
-**To switch environments:**
-Simply update the `base.url` in `config.properties`
+**Switch environments:**  
+Update only the `base.url` value in `config.properties`
+
+---
 
 ## 🚀 Quick Start
 
-### Step 1: Clone/Navigate to Project
+### Step 1: Clone the Repository
 ```bash
-cd C:\Users\JusticeAbban\Desktop\onboarding-api-automation
+git clone https://github.com/Justiceabban/BePartManager-api-automation.git
+cd BePartManager-api-automation
 ```
 
 ### Step 2: Install Dependencies
@@ -197,30 +263,32 @@ cd C:\Users\JusticeAbban\Desktop\onboarding-api-automation
 mvn clean install
 ```
 
-### Step 3: Configure Token
-Edit `src/main/resources/config.properties` and add your Bearer token
+### Step 3: Configure Your Bearer Token
+Edit `src/main/resources/config.properties` and set your Bearer token value.
 
-### Step 4: Run Tests
+### Step 4: Run the Tests
 ```bash
-# Option 1: Using batch script (easiest)
+# Option A: Batch script (Windows, recommended)
 run-tests-with-allure.bat
 
-# Option 2: Using Maven
+# Option B: Maven command
 mvn clean test
 ```
 
-### Step 5: View Allure Report
+### Step 5: View the Allure Report
 ```bash
-# Option 1: Using batch script
+# Option A: Batch script (Windows)
 serve-allure-report.bat
 
-# Option 2: Using Maven
+# Option B: Maven command
 mvn allure:serve
 ```
 
-That's it! Your tests will run and a beautiful Allure report will open in your browser.
+Your tests will execute and an interactive Allure report will open automatically in your browser. ✅
 
-## 🔧 Running Tests
+---
+
+## ▶️ Running Tests
 
 ### Run All Tests (17 tests)
 ```bash
@@ -237,21 +305,22 @@ mvn test -Dtest=BePartManagerApiTest
 mvn test -Dtest=BePartManagerApiNegativeTest
 ```
 
-### Run Specific Test
+### Run a Specific Test Method
 ```bash
 mvn test -Dtest=BePartManagerApiTest#testGetBuddies
 ```
 
-### Using IDE (IntelliJ IDEA)
-1. Open the project
+### Run via IDE (IntelliJ IDEA)
+1. Open the project in IntelliJ IDEA
 2. Navigate to `BePartManagerApiTest.java` or `BePartManagerApiNegativeTest.java`
-3. Right-click and select "Run" or click the green play button
-4. After tests complete, run `mvn allure:serve` to view report
+3. Right-click the class or method → **Run**
+4. After tests complete, run `mvn allure:serve` to view the report
 
+---
 
-## 📊 Expected Output
+## 📤 Expected Output
 
-### Console Output (Sample)
+### Sample Console Output
 ```
 [INFO] Running com.managerApp.api.BePartManagerApiNegativeTest
 ✓ No auth test: Status 403 (Forbidden)
@@ -282,77 +351,76 @@ All tests completed!
 [INFO] BUILD SUCCESS
 ```
 
-## 📊 Allure Report Features
+---
 
-The Allure report provides:
+## 📊 Allure Reports
+
+The generated Allure report provides rich, interactive test insights:
 
 ### Overview Dashboard
-- ✅ Total tests executed with pass/fail statistics
+- ✅ Total tests executed with pass/fail breakdown
 - ⏱️ Execution time and performance metrics
-- 📈 Test trends over multiple runs
-- 🎯 Test distribution by severity
+- 📈 Test trend graphs across multiple runs
+- 🎯 Test distribution by severity level
 
 ### Detailed Test Results
-- **Request Details**: Method, URL, Headers, Parameters
-- **Response Details**: Status code, Headers, Body (formatted JSON)
-- **Execution Steps**: Detailed step-by-step test flow
-- **Attachments**: Request/Response data, logs
-- **Timeline**: Visual representation of test execution
+- **Request Details** — Method, URL, Headers, Query Parameters
+- **Response Details** — Status code, Headers, formatted JSON body
+- **Execution Steps** — Step-by-step test flow with timing
+- **Attachments** — Raw request/response data and logs
+- **Timeline View** — Visual parallel execution timeline
 
 ### Test Organization
-- 📁 Grouped by Epic → Feature → Story
-- 🏷️ Tagged by severity (Critical, Blocker, Normal, etc.)
-- 🔍 Searchable and filterable
-- 📝 With descriptions and documentation
+- 📁 Grouped by **Epic → Feature → Story** hierarchy
+- 🏷️ Tagged by severity (`Critical`, `Blocker`, `Normal`, etc.)
+- 🔍 Fully searchable and filterable
+- 📝 Inline descriptions and documentation links
 
-**For complete Allure documentation**, see [ALLURE_GUIDE.md](ALLURE_GUIDE.md)
+> 📖 For full Allure setup and usage guidance, see [ALLURE_GUIDE.md](Documentation/ALLURE_GUIDE.md)
 
-
+---
 
 ## 🆘 Troubleshooting
 
-### Issue: Tests Fail with 401/403
-**Solution:** Update the Bearer token in `src/main/resources/config.properties`
+| Symptom | Solution |
+|---------|---------|
+| **Tests fail with 401 / 403** | Update `bearer.token` in `config.properties` |
+| **Connection refused** | Verify the API endpoint is reachable at `base.url` |
+| **Maven build fails** | Run `mvn clean install` to refresh all dependencies |
+| **`allure` command not found** | Use `mvn allure:serve` instead, or install the [Allure CLI](https://allurereport.org/docs/install/) |
+| **Tests seem slow** | Expected — the full suite takes ~50 seconds for 17 tests |
 
-### Issue: Connection Refused
-**Solution:** Verify API endpoint is accessible at configured base URL
-
-### Issue: Maven Build Fails
-**Solution:** Run `mvn clean install` to refresh dependencies
-
-### Issue: Allure Command Not Found
-**Solution:** Use `mvn allure:serve` instead or install Allure CLI
-
-### Issue: Tests Are Slow
-**Solution:** Normal - full suite takes ~50 seconds for 17 tests
+---
 
 ## 📚 Documentation
 
-This project includes extensive documentation:
+| Document | Description |
+|----------|-------------|
+| [README.md](README.md) | Project overview (this file) |
+| [QUICK_REFERENCE.md](Documentation/QUICK_REFERENCE.md) | Quick commands and tips |
+| [CONFIGURATION_SUMMARY.md](Documentation/CONFIGURATION_SUMMARY.md) | Configuration management guide |
+| [ALLURE_GUIDE.md](Documentation/ALLURE_GUIDE.md) | Allure reporting setup and usage |
+| [ASSERTIONS_GUIDE.md](Documentation/ASSERTIONS_GUIDE.md) | Assertion patterns and best practices |
+| [EXAMPLE_ASSERTIONS.md](Documentation/EXAMPLE_ASSERTIONS.md) | Code examples and templates |
+| [ENDPOINTS_REFERENCE.md](Documentation/ENDPOINTS_REFERENCE.md) | Full API endpoints reference |
+| [TESTING_SUMMARY.md](Documentation/TESTING_SUMMARY.md) | Detailed test descriptions |
+| [JIRA_DOCUMENTATION.md](Documentation/JIRA_DOCUMENTATION.md) | Full JIRA-ready project documentation |
+| [PROJECT_DELIVERY_SUMMARY.md](Documentation/PROJECT_DELIVERY_SUMMARY.md) | Delivery summary for stakeholders |
+| [PROJECT_SUMMARY.md](Documentation/PROJECT_SUMMARY.md) | Technical project overview |
 
-| Document | Purpose |
-|----------|---------|
-| **README.md** | This file - project overview |
-| **QUICK_REFERENCE.md** | Quick commands and tips |
-| **CONFIGURATION_SUMMARY.md** | Configuration management guide |
-| **ALLURE_GUIDE.md** | Allure reporting setup and usage |
-| **ASSERTIONS_GUIDE.md** | Assertion patterns and best practices |
-| **EXAMPLE_ASSERTIONS.md** | Code examples and templates |
-| **ENDPOINTS_REFERENCE.md** | API endpoints documentation |
-| **TESTING_SUMMARY.md** | Complete test details |
-| **JIRA_DOCUMENTATION.md** | Full project documentation |
-| **PROJECT_DELIVERY_SUMMARY.md** | Delivery summary for stakeholders |
-| **PROJECT_SUMMARY.md** | Technical project overview |
+---
 
-## 🎯 Common Tasks
+## 🛠️ Common Tasks
 
-### Update Bearer Token (Most Common)
-1. Open `src/main/resources/config.properties`
-2. Find: `bearer.token=<old-token>`
-3. Replace with new token
-4. Save and run tests - Done! ✅
+### Update Bearer Token
+```
+1. Open  src/main/resources/config.properties
+2. Find:    bearer.token=<old-token>
+3. Replace: bearer.token=<new-token>
+4. Save and re-run tests ✅
+```
 
-### Run Specific Test Scenario
+### Run a Specific Test Scenario
 ```bash
 # Single positive test
 mvn test -Dtest=BePartManagerApiTest#testGetBuddies
@@ -361,49 +429,42 @@ mvn test -Dtest=BePartManagerApiTest#testGetBuddies
 mvn test -Dtest=BePartManagerApiNegativeTest#testGetBuddies_NoAuthentication
 ```
 
-### Generate Fresh Allure Report
+### Generate a Fresh Allure Report
 ```bash
 mvn clean test
 mvn allure:serve
 ```
 
-## 🎓 Learning Resources
-
-- **For quick commands**: See [QUICK_REFERENCE.md](QUICK_REFERENCE.md)
-- **For Allure setup**: See [ALLURE_GUIDE.md](ALLURE_GUIDE.md)
-- **For assertion patterns**: See [ASSERTIONS_GUIDE.md](ASSERTIONS_GUIDE.md)
-- **For code examples**: See [EXAMPLE_ASSERTIONS.md](EXAMPLE_ASSERTIONS.md)
-- **For complete docs**: See [JIRA_DOCUMENTATION.md](JIRA_DOCUMENTATION.md)
+---
 
 ## 🏆 Project Status
 
-- ✅ **Status**: Production Ready
-- ✅ **Build**: Success
-- ✅ **Tests**: 17/17 Passing (100%)
-- ✅ **Coverage**: 5/5 Endpoints (100%)
-- ✅ **Documentation**: Complete
-- ✅ **CI/CD**: Ready for integration
+| Item | Status |
+|------|--------|
+| **Build** | ✅ Passing |
+| **Tests** | ✅ 17/17 Passing (100%) |
+| **Endpoint Coverage** | ✅ 5/5 (100%) |
+| **Documentation** | ✅ Complete |
+| **CI/CD Readiness** | ✅ Ready for integration |
+
+---
 
 ## 👨‍💻 Author
 
 **Justice Abban**  
-QA Automation Engineer  
-AmaliTech gGmbH
-
-## 📅 Project Information
-
-- **Created**: February 13, 2026
-- **Last Updated**: April 15, 2026
-- **Version**: 2.0
-- **Status**: Production Ready
-
-## 📄 License
-
-Internal use only - AmaliTech gGmbH
+QA Automation Engineer — AmaliTech gGmbH
 
 ---
 
-**Need Help?** Check [QUICK_REFERENCE.md](QUICK_REFERENCE.md) for quick commands and common tasks!
+## 📅 Project Information
 
-#   B e P a r t M a n a g e r - a p i - a u t o m a t i o n  
- 
+| Field | Value |
+|-------|-------|
+| **Created** | February 13, 2026 |
+| **Last Updated** | April 15, 2026 |
+| **Version** | 2.0 |
+| **License** | Internal use only — AmaliTech gGmbH |
+
+---
+
+> 💡 **Need help?** Start with [QUICK_REFERENCE.md](Documentation/QUICK_REFERENCE.md) for the most common commands and shortcuts.
